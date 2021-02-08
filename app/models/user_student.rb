@@ -6,4 +6,7 @@ class UserStudent < ApplicationRecord
 
   
          has_and_belongs_to_many :classes 
+         has_many :notes 
+         has_many :comments 
+         has_many :commented_notes, through: :comments, source: :notes 
 end

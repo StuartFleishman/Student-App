@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_231703) do
+ActiveRecord::Schema.define(version: 2021_02_08_233941) do
 
   create_table "Classes_UserStudents", id: false, force: :cascade do |t|
     t.integer "Class_id", null: false
@@ -30,6 +30,8 @@ ActiveRecord::Schema.define(version: 2021_02_08_231703) do
     t.datetime "comment_date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "user_student_id"
+    t.integer "note_id"
   end
 
   create_table "notes", force: :cascade do |t|
@@ -38,6 +40,7 @@ ActiveRecord::Schema.define(version: 2021_02_08_231703) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.integer "class_id"
+    t.integer "user_student_id"
   end
 
   create_table "user_students", force: :cascade do |t|
