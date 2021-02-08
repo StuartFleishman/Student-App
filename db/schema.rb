@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_08_230503) do
+ActiveRecord::Schema.define(version: 2021_02_08_231342) do
+
+  create_table "Classes_UserStudents", id: false, force: :cascade do |t|
+    t.integer "Class_id", null: false
+    t.integer "UserStudent_id", null: false
+    t.index "\"class_id\", \"user_student_id\"", name: "index_Classes_UserStudents_on_class_id_and_user_student_id"
+    t.index "\"user_student_id\", \"class_id\"", name: "index_Classes_UserStudents_on_user_student_id_and_class_id"
+  end
 
   create_table "classes", force: :cascade do |t|
     t.string "name"
